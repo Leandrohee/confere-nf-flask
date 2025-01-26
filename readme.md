@@ -1,4 +1,42 @@
-# CREATING API WITH FLASK AND VERCEL
+# CREATING API WITH FLASK USING PIPENV
+
+1. Install pipenv globally using (only if you dont have):
+
+```bash
+brew install pipenv
+```
+
+2. Create the virtual enviroment with pipenv:
+
+```bash
+pipenv install
+```
+
+It will generate 2 files
+- Pipfile: similar to package.json
+- Pipfile.lock : similtar to yarn.lock
+
+3. Running Your Application in the Virtual Environment and deactivating
+
+```bash
+pipenv shell
+exit
+```
+
+4. Installing dependencias
+```bash
+pipenv install flask
+```
+
+It automaticly includes the flask in the Pipfile and the Pipfile.lock
+
+5. To see where the depenndencias are store type:
+
+```bash
+pipenv --venv
+```
+
+# CREATING API WITH FLASK USING PIP
 
 1. Create the venv folder and start it.
     
@@ -6,6 +44,12 @@
 python3 -m venv venv
 source venv/bin/activate
 ```
+
+    1.1. To exit the venv type:
+
+    ```bash
+    deactivate
+    ```
     
 2. Install the flask dependencies
     
@@ -18,6 +62,14 @@ pip install flask
 ```bash
 pip freeze > requirements.txt
 ```
+
+    3.1. If you delete the venv folder you can reinstall all the packages with:
+
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+    ```
     
 
 4. Create an file app.py on root folder, and start flask
@@ -74,3 +126,10 @@ npm install -g vercel
     - **Project Name**: same as github repository
     - **Framework Preset:** Other
     - **Root Directory:** ./
+
+
+# Run your code
+
+```bash
+python3 app.py
+```
