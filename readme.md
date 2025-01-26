@@ -29,7 +29,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Hello, Flas on Vercel!"
+    return {
+        "success": "true",
+        "msg": "Hello, Flas on Vercel!"
+    }
+
 
 if (__name__ == "__main__"):
     app.run()
@@ -37,7 +41,36 @@ if (__name__ == "__main__"):
 
 # SETTING UP THE PROJECT TO WORK WITH VERCEL
 
-1. Install vercel cli globally
+1. Install Vercel CLI globally
+    
+```bash
+npm install -g vercel
+```
+    
 
+2. Create a **vercel.json** file in the root folder in the flask project
+    
+```json
+{
+    "version": 2,
+    "builds": [
+        {
+        "src": "app.py",
+        "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+        "src": "/(.*)",
+        "dest": "app.py"
+        }
+    ]
+    }
+    
 ```
-```
+    
+
+3. In vercel linked with you github import the project related
+    - **Project Name**: same as github repository
+    - **Framework Preset:** Other
+    - **Root Directory:** ./
