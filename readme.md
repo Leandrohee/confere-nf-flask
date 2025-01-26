@@ -36,3 +36,8 @@ if (__name__ == "__main__"):
 ```
 
 # SETTING UP THE PROJECT TO WORK WITH VERCEL
+
+1. Install vercel cli globally
+
+```
+```
