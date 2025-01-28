@@ -133,3 +133,13 @@ npm install -g vercel
 ```bash
 python3 app.py
 ```
+
+# TO SOLVE PROBLEMS RELATED TO THE INTERPRETER 
+
+Sometimes when the imports get yellow from an error you have to change some configurations
+
+1. when using pipenv
+
+- Type: ```cmd + shift + p```
+- "Selecione o interpretador"
+- escreva "pipenv" e selecione o python referente
